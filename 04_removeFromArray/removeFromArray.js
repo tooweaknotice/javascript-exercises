@@ -10,6 +10,7 @@ const removeFromArray = function(array, ...args) {
     if (match) {
       array.splice(i, 1);
       i--;
+      continue;
     }
   }
   return array;
