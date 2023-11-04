@@ -1,12 +1,18 @@
-const removeFromArray = function(array, arg) {
-  let outArray = []
-  for (let i in array) {
-    if (array[i] === arg) {
-      continue;
+const removeFromArray = function(array, ...args) {
+  for (let i = 0; i < array.length; i++) {
+    let match = false;
+    for (let j in args) {
+      if (array[i] === args[j]) {
+        match = true;
+        break;
+      }
     }
-    outArray.push(array[i]);
+    if (match) {
+      array.splice(i, 1);
+      i--;
+    }
   }
-  return outArray;W
+  return array;
 };
 
 // Do not edit below this line
